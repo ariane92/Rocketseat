@@ -15,8 +15,10 @@ module.exports = {
   },
   rules: {
     "prettier/prettier": "error",
-    "class-methods-use-this": "off",
+    "class-methods-use-this": "off",   
     "no-param-reassign": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
     "camelcase": "off",
     "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
     "linebreak-style": 0,

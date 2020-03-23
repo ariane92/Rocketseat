@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css'
-
-import imagem from './assets/escritorio.jpg'
+import TechList from './components/TechList';
 
 function App() {
-    return <img width="200" src={imagem}/>
+    return <TechList/>
 }
 
-export default App;
+export default App; 

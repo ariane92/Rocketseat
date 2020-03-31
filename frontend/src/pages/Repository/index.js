@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import api from '../../services/api';
 import Container from '../../components/Container';
 
-import { Loadind, Owner } from './styles';
+import { Loadind, Owner, IssueList } from './styles';
 
 export default class Repository extends Component {
   static propTypes = {
@@ -43,7 +43,7 @@ export default class Repository extends Component {
   }
 
   render() {
-    const { repository, assues, loading } = this.state;
+    const { repository, issues, loading } = this.state;
 
     if (loading) {
       return <Loadind>Carregando...</Loadind>;
@@ -56,6 +56,22 @@ export default class Repository extends Component {
           <h1>{repository.name}</h1>
           <p>{repository.description}</p>
         </Owner>
+        <IssueList>
+          {issues.map((issue) => (
+            <li key={String(issue.id)}>
+              <img src={issue.user.avatar_url} alt={issue.user.login} />
+              <div>
+                <strong>
+                  <a href={issue.html_url}>{issue.title}</a>
+                  {issue.labels.map((label) => (
+                    <span key={String(label.id)}>{label.name}</span>
+                  ))}
+                </strong>
+                <p>{issue.user.login}</p>
+              </div>
+            </li>
+          ))}
+        </IssueList>
       </Container>
     );
   }

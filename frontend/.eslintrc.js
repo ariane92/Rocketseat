@@ -4,16 +4,16 @@ module.exports = {
     es6: true,
   },
   extends: [
+    'plugin:react/recommended',
     'airbnb',
     'prettier',
     'prettier/react'
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
-
-  parse: 'babel-eslint',
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -26,10 +26,10 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    'prettier/prettier':'error',
+    'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',
-      {extensions: ['.jsx', '.js']}
+      {extensions: ['.jsx','.js']}
     ],
     'import/prefer-default-expoirt': 'off'
   },

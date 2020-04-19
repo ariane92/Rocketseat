@@ -1,9 +1,11 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
-import { sign, verify } from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 
 import User from '../models/User';
 import authConfig from '../config/auth';
+
+import AppError from '../errors/AppError';
 
 interface RequestDTO {
   email: string;
@@ -22,7 +24,7 @@ class AuthenticateUserService {
     });
 
     if (!user) {
-      throw new Error('Incorret email/password combination');
+      throw new AppError('Incorret email/password combination', 401);
     }
 
     const { secret, expiresIn } = authConfig.jwt;
@@ -34,7 +36,7 @@ class AuthenticateUserService {
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error('Incorret email/password combination');
+      throw new AppError('Incorret email/password combination', 401);
     }
 
     return {

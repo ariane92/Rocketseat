@@ -1,6 +1,6 @@
  # 🧭 GitHub Explorer
 
-A aplicação consome a API do GitHub e tem como objetivo buscar qualquer repositório e trazer algumas informações dele, como stars forks e issues abertas.
+A aplicação consome a API do GitHub, tem como objetivo buscar qualquer repositório e trazer algumas informações dele, como: stars, forks e issues abertas.
 
 
 ## Libraries
@@ -16,4 +16,4 @@ A aplicação consome a API do GitHub e tem como objetivo buscar qualquer reposi
  - yarn
 - yarn start
 
-##### 🚀 Bootcamp Rocketseat 
+###### 🚀 Bootcamp Rocketseat 

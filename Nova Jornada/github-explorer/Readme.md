@@ -11,9 +11,19 @@ A aplicação consome a API do GitHub, tem como objetivo buscar qualquer reposit
 * styled-components
 * polished
 
-## Como executar o projeto
- - cd github-explorer
- - yarn
-- yarn start
+## :gear: Como executar
+```bash
+    # instalar as dependências
+    $ yarn
+
+    # Iniciar o projeto
+    $ yarn start
+   
+    # Executar testes
+    $ yarn test
+    
+    # Executar build
+    $ yarn build
+```
 
 ###### 🚀 Bootcamp Rocketseat 
